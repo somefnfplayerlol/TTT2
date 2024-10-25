@@ -303,6 +303,20 @@ if CLIENT then
                 COLOR_WHITE,
                 TEXT_ALIGN_CENTER
             )
+
+            -- Draw name of spectated player
+            local obs = client:GetObserverTarget()
+            if IsValid(obs) and obs:IsPlayer() then
+                self:ShadowedText(
+                    obs:Nick(),
+                    "TimeLeft",
+                    screenwidth / 2,
+                    margin,
+                    COLOR_WHITE,
+                    TEXT_ALIGN_CENTER,
+                    TEXT_ALIGN_TOP
+                )
+            end
         end
     end
 end
